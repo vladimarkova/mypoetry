@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="author" content="vmarkova"/>
+        <meta name="description" content="Form for topic choice"/>
+        <meta charset="utf-8" />
+
+        <script defer src="scripts/utility.js"></script>
+        <script defer src="scripts/topicInsert.js"></script>
+
+        <link href="components/PageStyling.css" rel="stylesheet"></link>
+        <link href="components/FormStyling.css" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href = "poetry.jpg" rel="icon" type="image/jpg">
+    </head>
+
+    <body class="bodyclass">
+            <div class="topnav">
+                <a class="active" href="/"><i class="fa fa-fw fa-home"></i> MyPoetry</a>
+                <div class="dropdown">
+                        <button class="dropbtn"><i class="fa fa-plus-square" aria-hidden="true"></i> Добави
+                        <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <a href=""><i class="fa fa-book" aria-hidden="true"></i> Тема</a>
+                        <a href="pages/QuestionForm.html"><i class="fa fa-magic" aria-hidden="true"></i> Стих</a>
+                        </div>
+                </div>
+                <a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Стихове</a>
+                <a href="Conditions.html"><i class="fa fa-handshake-o" aria-hidden="true"></i> Общи условия</a>
+                <div class="topnav-right">
+                    <a href="pages/LoginForm.html">Вход <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                    <div class="dropdown">
+                        <button class="dropbtn"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Регистрация
+                        <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <a href="pages/RegisterStudentsForm.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Потребител</a>
+                        <a href="pages/RegisterTeachersForm.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Редактор</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <title>Добавяне на тема</title>
+                <div class="form-style-2">
+                    <div class="form-style-2-heading">Добавяне на тема</div>
+                    <form>
+                        <label for="topicName"><span>Име</span><span class="required">*</span>
+                        <input id="topicName" name="topicName" type="text" class="input-field" placeholder="Не по-дълго от 30 символа" /></label> 
+                        
+                        <label for="extraInfo"><span>Допълнителна информация</span><span></span>
+                        <textarea id="extraInfo" name="extraInfo" class="textarea-field" ></textarea></label>
+                        <br />
+                        <label><span></span><span></span><input id="Insert" type="submit" value="Запиши" /></label>      
+                    </form>
+                </div>
+                <div id="resp"></div>
+                <div id="errors"></div>
+        </body>
+</html>
