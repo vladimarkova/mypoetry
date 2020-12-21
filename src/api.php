@@ -8,17 +8,11 @@
 
     if(preg_match("/topicInsert$/", $requestURL)) {
         topicInsert();
+    } elseif(preg_match("/topicSelect$/", $requestURL)) {
+        topicSelect();
     } else {
         echo json_encode(["error" => "URL not found"]);
     }
-
-    // echomsg();
-
-    // function echomsg() {
-    //     echo "YOU SUCCEEDED!";
-    //     $message = "Успешно добавихте тема!";
-    //     $response = ["success" => true, "message" => $message];
-    // }
 
     function topicInsert() {
         $errors = [];
@@ -54,6 +48,21 @@
         } else {
             $message = "Успешно добавихте тема!";
             $response = ["success" => true, "message" => $message];
+        }
+
+        echo json_encode($response);
+    }
+
+    function topicSelect() {
+        $response = [];
+
+        $topic = new Topic("");
+        $topicName = $topic->selectTopicByID(1);
+        if ($topicName) {
+            $response = ["success" => true, "message" => $topicName];
+        } else {
+            $errors = "Успешно добавихте тема!";
+            $response = ["success" => false, "error" => $errors];
         }
 
         echo json_encode($response);

@@ -8,6 +8,13 @@
     background-color: rgb(223, 223, 223);
   }
 
+  .hambicon {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }
+  
   .main_text {
       padding-left:106px;
       align-items: center;

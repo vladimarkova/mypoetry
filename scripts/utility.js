@@ -1,7 +1,7 @@
-const ajax = (url, settings, successUrl) => {
+const ajax = (url, settings, selectQuery, successUrl) => {
     fetch(url, settings)
         .then(response => response.json())
-        .then(data =>  load(data, successUrl))
+        .then(data => selectQuery ? loadTopic(data) : load(data, successUrl))
         .catch(error => console.log(error));
 };
 
@@ -17,4 +17,14 @@ const load = (data, url) => {
     var extraInfo = document.getElementById('extraInfo');
     topicName.value = "";
     extraInfo.value = "";
+};
+
+const loadTopic = data => {
+    var topicName = document.getElementsByName('topicName')[0];
+    if(data.success) {
+        topicName.innerHTML = data.message;
+    } else {
+        const errors = document.getElementById('errors');
+        errors.innerHTML = data.error;
+    }
 };

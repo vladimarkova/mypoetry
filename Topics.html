@@ -7,11 +7,12 @@
         <meta charset="utf-8" />
 
         <script defer src="scripts/utility.js"></script>
-        <script defer src="scripts/topicInsert.js"></script>
+        <script defer src="scripts/topicSelect.js"></script>
 
         <link href="components/PageStyling.css" rel="stylesheet"></link>
-        <link href="components/FormStyling.css" rel="stylesheet"></link>
+        <link href="components/TableStyling.css" rel="stylesheet"></link>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href = "poetry.jpg" rel="icon" type="image/jpg">
     </head>
 
@@ -23,7 +24,7 @@
                         <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                        <a href=""><i class="fa fa-book" aria-hidden="true"></i> Тема</a>
+                        <a href="TopicForm.html"><i class="fa fa-book" aria-hidden="true"></i> Тема</a>
                         <a href="pages/QuestionForm.html"><i class="fa fa-magic" aria-hidden="true"></i> Стих</a>
                         </div>
                 </div>
@@ -35,13 +36,12 @@
                             <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-content">
-                        <a href="Topics.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Теми</a>
+                        <a href=""><i class="fa fa-user-plus" aria-hidden="true"></i> Теми</a>
                         <a href=""><i class="fa fa-user-plus" aria-hidden="true"></i> Стихове</a>
                         <a href=""><i class="fa fa-user-plus" aria-hidden="true"></i> Разкази</a>
                         <a href=""><i class="fa fa-user-plus" aria-hidden="true"></i> Музика</a>
                         </div>
                     </div>
-
 
                     <a href="pages/LoginForm.html">Вход <i class="fa fa-sign-in" aria-hidden="true"></i></a>
                     <div class="dropdown">
@@ -55,22 +55,27 @@
                     </div>
                 </div>
             </div> 
+            <title>Теми</title>
 
-            <title>Добавяне на тема</title>
-                <div class="form-style-2">
-                    <div class="form-style-2-heading">Добавяне на тема</div>
-                    <form>
-                        <label for="topicName"><span>Име</span><span class="required">*</span>
-                        <input id="topicName" name="topicName" type="text" class="input-field" placeholder="Не по-дълго от 30 символа" /></label> 
-                        
-                        <label for="extraInfo"><span>Допълнителна информация</span><span></span>
-                        <textarea id="extraInfo" name="extraInfo" class="textarea-field" ></textarea></label>
-                        <br />
-                        <label><span></span><span></span><input id="Insert" type="submit" value="Запиши" /></label>      
-                    </form>
-                </div>
-                <div id="resp"></div>
-                <div id="errors"></div>
-                <p id="demo"></p>>
+            <table class="styled_table">
+                <thead>
+                    <tr>
+                        <th>Тема</th>
+                        <th>Препоръки</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td name="topicName"></td>
+                        <td><input name="recommendations" type="text" /></td>
+                    </tr>
+                    <tr class="active-row">
+                        <td name="topicName">Melissa</td>
+                        <td><input name="recommendations" type="text" /></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="errors"></div>
         </body>
 </html>

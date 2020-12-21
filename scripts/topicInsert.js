@@ -17,7 +17,7 @@ const topicInsert = event => {
         body: `data=${JSON.stringify(topic)}`
     };
 
-    ajax('src/api.php/topicInsert', settings, 'index.html');
+    ajax('src/api.php/topicInsert', settings, false, 'index.html');
 };
 
 (function() {

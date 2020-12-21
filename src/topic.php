@@ -47,6 +47,21 @@
             }
         }
 
+        public function selectTopicByID($topicID) {
+            $query = $this->db->selectTopicQuery(["topicID" => $topicID]);
+            if ($query["success"]) {
+                $topic = $query["data"]->fetch(PDO::FETCH_ASSOC);
+
+                if ($topic) {
+                    return $topic["topicName"];
+                } else {
+                    return "Empty topic";
+                }
+            } else {
+                return $query;
+            }
+        }
+
         public function createTopic($extraInfo) {
             $query = $this->db->insertTopicQuery(["topicName" => $this->topicName, "extraInfo" => $extraInfo]);
 
